@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label id="id1"></label><br>
+    <label id="id2"></label><br>
+
+    <button onclick="demo4()">SHOW</button>
+</body>
+</html>
+<script>
+    //Array Literal
+    function demo()
+    {
+        let game=["Android","iOS","Windows","React Js"]
+        for(let i=0;i<game.length;i++)
+        {
+            document.getElementById("id1").innerHTML+=game[i]+"<br>"
+        }
+    }
+    //Using new keyword
+    function demo2()
+    {
+        const array=new Array();
+        // for(let i=0;i<10;i++)
+        // {
+        //     //store value in array by position if we take i<10 then value store in array
+        //     //0 to 9
+        //     array[i]=i;
+        // }
+        
+        array[0]=100;
+        array[1]=10;
+        array[2]=11
+        
+        
+        //display value from array which we have store in above for loop
+        for(let i=0;i<array.length;i++)
+        {
+            document.getElementById("id1").innerHTML+=array[i]+"<br>"
+        }
+    }
+    //Array Constructor
+    function demo3()
+    {
+        const array=new Array("React Js","Android","PPT")
+        // for(let i=0;i<array.length;i++)
+        // {
+        //     document.getElementById("id1").innerHTML+=array[i]+"<br>"
+        // }
+        alert(array[1]);
+    }
+    function demo4()
+    {
+        const seasons = ["spring", "summer", "winter", "autumn"];
+        const names1 = ["Yashraj", "Thomas"];
+        const nestedArray = ["Yashraj", ["Thomas", ["Kate"]]];    
+        //document.getElementById("id1").innerHTML=seasons.join("-")
+        //seasons.pop()
+        //seasons.push("COOL")
+        //seasons.shift()
+        //seasons.unshift("DRINK")
+        //var demoshow=seasons.concat(names1)
+        //var d=seasons.copyWithin(0,1);
+        //const flatArray = nestedArray.flat(2); 
+       // const removed = seasons.splice(1, 1, "spring");   
+        //const removed = seasons.toSpliced(1, 1, "spring");   
+        // document.getElementById("id2").innerHTML=removed
+        // document.getElementById("id1").innerHTML=seasons
+        //alert(seasons.includes("autumn"))
+
+        //const result = names.find((name) => name.startsWith("K"));  
+        const result=seasons.findIndex((name)=>name.startsWith("w"))
+        alert(result)
+
+        //   seasons.forEach((item)=>{
+        //     document.getElementById("id1").innerHTML+=item.join+"<br>"
+        //   })
+        
+    }
+</script>

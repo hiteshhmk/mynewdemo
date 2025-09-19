@@ -1,0 +1,124 @@
+<?php
+// Handle Form Submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $conn = new mysqli("localhost", "root", "", "praxware_certificates");
+
+    if ($conn->connect_error) {
+        die("Connection Failed: " . $conn->connect_error);
+    }
+
+    $full_name   = $conn->real_escape_string($_POST['full_name']);
+    $college_name= $conn->real_escape_string($_POST['college_name']);
+    $semester    = $conn->real_escape_string($_POST['semester']);
+    $branch      = $conn->real_escape_string($_POST['branch']);
+    $email       = $conn->real_escape_string($_POST['email']);
+    $mobile      = $conn->real_escape_string($_POST['mobile']);
+
+    $sql = "INSERT INTO certificate_requests (full_name, college_name, semester, branch, email, mobile)
+            VALUES ('$full_name', '$college_name', '$semester', '$branch', '$email', '$mobile')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>alert('✅ Your details have been submitted successfully!');</script>";
+    } else {
+        echo "Error: " . $conn->error;
+    }
+    $conn->close();
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Praxware Certificate Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+        img {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #2ca58d;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #2ca58d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #1e7d67;
+        }
+        .note {
+            font-size: 14px;
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Final_praxware_logo.png" alt="Praxware Logo">
+        <h2>Certificate Request Form</h2>
+        <form method="POST" action="">
+            <label>Full Name (For Certificate)</label>
+            <input type="text" name="full_name" required>
+
+            <label>College Name</label>
+            <input type="text" name="college_name" required>
+
+            <label>Semester</label>
+            <input type="text" name="semester" required>
+
+            <label>Branch</label>
+            <select name="branch" required>
+                <option value="">-- Select Branch --</option>
+                <option value="Diploma CE">Diploma CE</option>
+                <option value="Diploma IT">Diploma IT</option>
+                <option value="BE CE">BE CE</option>
+                <option value="BE IT">BE IT</option>
+            </select>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Mobile</label>
+            <input type="text" name="mobile" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <p class="note">
+            Note: This information is collected only for certification verification purposes.<br>
+            We do not share or sell your data to third parties.<br>
+            *Certificate is non-transferable. Do not misuse.
+        </p>
+    </div>
+</body>
+</html>

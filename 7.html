@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label id="id1"></label><br>
+    <button onclick="check()">SHOW</button>
+</body>
+</html>
+<script>
+    function check()
+    { //document.getElementById("id1").innerHTML=str.toLowerCase()
+        //concate means to merge multiple string
+        let str='       Hello This is Namit JavaScript Class  ';
+        //document.getElementById("id1").innerHTML=str.concat(',','This class Taken By Hitesh Sir')
+        //console.log(str.indexOf('H'))
+        // document.getElementById("id1").innerHTML=str.lastIndexOf('l')
+        // document.getElementById("id1").innerHTML=str.toLowerCase()
+        // document.getElementById("id1").innerHTML=str.toUpperCase()
+        //document.getElementById("id1").innerHTML+=str.split(' ').join('-')
+        //document.getElementById("id1").innerHTML=str.search('')
+        //document.getElementById("id1").innerHTML=str.match('Java')
+        //document.getElementById("id1").innerHTML=str.replace('This',"These")
+        //document.getElementById("id1").innerHTML=str.charAt(4)
+        document.getElementById("id1").innerHTML=str
+        //without trim
+        console.log(str)
+        var name=str.trim()
+        document.getElementById("id1").innerHTML=name
+        console.log(name)
+    }
+</script>

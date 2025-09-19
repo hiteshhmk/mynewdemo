@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter UserName" id="id1"><br>
+    <input type="password" placeholder="Enter Password" id="id2"><br>
+    <input type="number" placeholder="Enter Age" id="id3"><br>
+    <input type="text" placeholder="Enter Country" id="id4"><br>
+    <label>Select Your Party Name</label><br>
+    <label>BJP</label><br>
+    <label>Congress</label><br>
+    <label>AAP</label>
+    <label>Other</label>
+    <input type="text" placeholder="Enter Your Party Name" id="id5"><br>
+    <button onclick="voting()">Login</button>
+</body>
+</html>
+<script>
+    function voting()
+    {
+        var u="admin"
+        var p="admin"
+       var name=document.getElementById("id1").value
+       var password=document.getElementById("id2").value
+       var age=parseInt(document.getElementById("id3").value)
+       var county=document.getElementById("id4").value
+       var party=document.getElementById("id5").value
+       if(name==u && password==p)
+       {
+           alert("Login Success")
+           if(age>18)
+           {
+               alert("Eligible For Voting")
+               if(county=="Indian")
+               {
+                   alert("Now Able to Vote")
+                   if(party=="BJP")
+                   {
+                       alert("Voting Done For :"+party)
+                   }
+                   else if(party=="Congree")
+                   {
+                    alert("Voting Done For :"+party)
+                   }
+                   else if(party=="AAP")
+                   {
+                    alert("Voting Done For :"+party)
+                   }
+                   else if(party=="Other")
+                   {
+                    alert("Voting Done For :"+party)
+                   }
+               }
+               else{
+                   alert("Not Able")
+               }
+           }
+           else{
+               alert("Not Applied")
+           }
+       }
+       else{
+           alert("Login Fail")
+       }
+    }
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{bb796f0dd2b3fa207cc811862015048d3839d4bb}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/664dc72c981b6c5647732657/1huft422k';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter No1" id="id1"><br>
+    <input type="email" placeholder="Enter No2" id="id2"><br>
+    <button onclick="add()">ADD</button><br>
+    <button onclick="sub()">SUB</button><br>
+</body>
+</html>
+<script>
+    function add()
+    {
+        var no1=parseInt(document.getElementById("id1").value)
+        var no2=parseInt(document.getElementById("id2").value)
+        var ans=no1+no2
+        alert(ans)
+    }
+    function sub()
+    {
+        var no1=parseInt(document.getElementById("id1").value)
+        var no2=parseInt(document.getElementById("id2").value)
+        var ans=no1-no2
+        alert(ans)
+    }
+</script>

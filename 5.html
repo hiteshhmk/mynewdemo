@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Please Select Any One</label><br>
+    <label>Press 1 For Addition</label><br>
+    <label>Press 2 For Substraction</label><br>
+    <label>Press 3 For Division</label><br>
+    <input type="number" placeholder="Enter No 1" id="id1"><br>
+    <input type="number" placeholder="Enter No 2" id="id2"><br>
+    <input type="text" placeholder="Enter Your Choice" id="id3"><br>
+    <button onclick="check()">OK</button><br>
+</body>
+</html>
+<script>
+    function check()
+    {
+        var no1=parseInt(document.getElementById("id1").value)
+        var no2=parseInt(document.getElementById("id2").value)
+        var choice=parseInt(document.getElementById("id3").value)
+        switch(choice)
+        {
+            case 1:
+                add()
+                break;
+            case 2:
+                sub()
+                break;
+             case 3:
+                div()
+                break;
+            default:
+                alert("Please Select Correct Choice")
+        }
+    }
+    function add()
+    {
+        var no1=parseInt(document.getElementById("id1").value)
+        var no2=parseInt(document.getElementById("id2").value)
+        var c=no1+no2;
+        alert(c)
+    }
+    function sub()
+    {
+        var no1=parseInt(document.getElementById("id1").value)
+        var no2=parseInt(document.getElementById("id2").value)
+        var c=no1-no2;
+        alert(c)
+    }
+    function div()
+    {
+        var no1=parseInt(document.getElementById("id1").value)
+        var no2=parseInt(document.getElementById("id2").value)
+        var c=no1/no2;
+        alert(c)
+    }
+</script>
